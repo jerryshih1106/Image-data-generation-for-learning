@@ -1,0 +1,5 @@
+0 white
+1 fried
+2 overcook
+3 roast
+4 split
