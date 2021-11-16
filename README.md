@@ -19,6 +19,7 @@ Background img:
   ![pngtree-qing-plaid-dining-table-banner-background-design-picture-image_911656](https://user-images.githubusercontent.com/66662065/141941659-208d48df-f6d8-4bb2-95de-c97acbc46e5e.jpg)
   
 Object img:
+  
   ![15154889601_new](https://user-images.githubusercontent.com/66662065/141941752-efd114b9-d747-4627-804b-98ce9cc304ba.jpg)
 
 Merge img:
