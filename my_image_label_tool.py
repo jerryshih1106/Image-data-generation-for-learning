@@ -8,10 +8,9 @@ import os
 import random
 # from PIL import Image
 import argparse
-import numpy as np
-import cv2
+
 from rembg.bg import remove
-# import numpy as np
+import numpy as np
 import io
 from PIL import Image,ImageFile,ImageDraw,ImageFilter
 from rembg.bg import remove
@@ -137,17 +136,32 @@ if __name__ == '__main__':
                 coor_x = random.randint(round((re_obj_w)/2),round((con_img_w-re_obj_w)/2))
                 coor_y = random.randint(round((re_obj_h)/2),round((con_img_w-re_obj_h)/2))
                 coordinate = (coor_x,coor_y)
-                xmin = coor_x - re_obj_w/2
-                ymin = coor_y - re_obj_h/2
-                xmax = coor_x + re_obj_w/2
-                ymax = coor_y + re_obj_h/2
+                # xmin = coor_x - re_obj_w/2
+                # ymin = coor_y - re_obj_h/2
+                # xmax = coor_x + re_obj_w/2
+                # ymax = coor_y + re_obj_h/2
+                xmin = coor_x 
+                ymin = coor_y
+                xmax = coor_x + re_obj_w
+                ymax = coor_y + re_obj_h
+                
                 
                 #===pil 貼上======
                 #新建一個透明的底圖
                 resultPicture = Image.new('RGBA', bg_img.size, (0, 0, 0, 0))
                 #把照片貼到底圖
+                
+                
                 resultPicture.paste(bg_img,(0,0))
                 resultPicture.paste(icon,coordinate,icon)
+                
+                #++++++++++++++++test
+                # img1 = ImageDraw.Draw(resultPicture)  
+                # img1.rectangle(((xmin,ymin),(xmax,ymax)),fill=None,outline=(255,0,0))
+                # resultPicture.show()
+                #++++++++++++++++
+                
+                
                 
                 # key_label = key_label[0]
                 #===============================================
@@ -157,10 +171,10 @@ if __name__ == '__main__':
                 
                 with open(save_data_file+data_txt_file+str(key_label[0])+"_"+str(count)+".txt", 'a') as f:
                     f.write( str(key_label[0]) + ' ' +
-                             str(xmin) + ' ' +
-                             str(ymin) + ' ' +
-                             str(xmax) + ' ' +
-                             str(ymax) + ' \n' )
+                              str(xmin) + ' ' +
+                              str(ymin) + ' ' +
+                              str(xmax) + ' ' +
+                              str(ymax) + ' \n' )
                 count = count + 1
             # except:
             #     continue
