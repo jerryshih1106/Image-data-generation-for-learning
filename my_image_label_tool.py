@@ -115,8 +115,8 @@ if __name__ == '__main__':
                 con_img_w = int(bg_w/zoom_factor)
                 con_img_h = int(bg_h/zoom_factor)  
                 
-                re_obj_w = round(obj_w/random.uniform(0.25,1))
-                re_obj_h = round(obj_h/random.uniform(0.25,1))
+                re_obj_w = round(obj_w/random.uniform(0.2,1))
+                re_obj_h = round(obj_h/random.uniform(0.2,1))
                 
                 if re_obj_w > con_img_w:
                     re_obj_w = con_img_w
@@ -133,8 +133,8 @@ if __name__ == '__main__':
                 
                 # icon.show(icon)
                 
-                coor_x = random.randint(round((re_obj_w)/2),round((con_img_w-re_obj_w)/2))
-                coor_y = random.randint(round((re_obj_h)/2),round((con_img_w-re_obj_h)/2))
+                coor_x = random.randint(0,round((con_img_w-re_obj_w)))
+                coor_y = random.randint(0,round((con_img_w-re_obj_h)))
                 coordinate = (coor_x,coor_y)
                 # xmin = coor_x - re_obj_w/2
                 # ymin = coor_y - re_obj_h/2
