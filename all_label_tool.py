@@ -47,27 +47,13 @@ def remove_white(img):
     return img
     
 
-def parse_args():
-    parser = argparse.ArgumentParser(description='label paste img')
-    parser.add_argument('--label', dest='label',
-                        help='name of label',
-                        default='white', type=str)
-    parser.add_argument('--obj_num', dest='obj_num',
-                        help='take num of random obj to merge with BG',
-                        default=3, type=int)
-    parser.add_argument('--bg_num', dest='bg_num',
-                        help='take num of random BG to merge with obj',
-                        default=10, type=int)
-    args = parser.parse_args()
-    return args
-
 if __name__ == '__main__':
-    args = parse_args()    
+    #args = parse_args()    
     # print('Called with args:')
     # print(args)
     
     
-    label = args.label
+    #label = args.label
     
     # save_data_file = "C:/Users/cpslab/Desktop/my_img_label_tool/data"
     save_data_file = "./data"
@@ -87,7 +73,7 @@ if __name__ == '__main__':
     bg_list=os.listdir(BG_path)
     
     #_obj_list = random.sample(obj_list,args.obj_num)  #隨機物件
-    _bg_list  = random.sample(bg_list ,args.bg_num)  #隨機背景
+    _bg_list  = random.sample(bg_list ,10)  #隨機背景
     
     count = 0
     # for obj in _obj_list:
